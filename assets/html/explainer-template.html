@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="[Author name]">
+<title>[Page title]</title>
+<style>
+/* Navy house style: explainer page. One self-contained file: no external fonts, scripts or images.
+   Part 1 is the base stylesheet. Part 2 adds accessibility, print and a few extra patterns in the same look. */
+:root{--navy:#243168;--ink:#1D1D1B;--line:#D3D8EA;--link:#0563C1;--flag:#8A4B00}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font:15px/1.55 Tahoma,Verdana,sans-serif}
+main{max-width:1040px;margin:0 auto;padding:28px 24px 120px}
+header{border-top:10px solid var(--navy);padding-top:22px}
+h1{color:var(--navy);font-size:28px;line-height:1.2;margin:0 0 6px}
+h2{color:var(--navy);font-size:21px;margin:44px 0 8px;padding-top:14px;border-top:1px solid var(--line)}
+h3{color:var(--navy);font-size:16px;margin:22px 0 6px}
+p{margin:6px 0 10px}
+a{color:var(--link)}
+.lede{font-size:16px;max-width:820px}
+.meta,.hint,.small{font-size:13px}
+.meta{color:#4A4F63}
+.toc{columns:2;column-gap:40px;padding-left:20px;max-width:760px}
+.toc li{margin:3px 0}
+.toc li:first-child{margin-top:0}
+.fill{border:1px solid var(--line);border-radius:3px;padding:14px 18px;margin:12px 0 18px;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+.field{display:flex;flex-direction:column;font-size:13px;font-weight:bold;color:var(--navy)}
+.field input,.field textarea{font:14px Tahoma,Verdana,sans-serif;padding:6px 8px;border:1px solid #9AA3C7;border-radius:3px;margin-top:3px;color:var(--ink)}
+.field .hint{font-weight:normal;color:#4A4F63;margin-top:2px}
+.fill .wide{grid-column:1/-1}
+.tickline{font-weight:normal;color:var(--ink);font-size:13.5px;margin-top:6px;display:flex;gap:8px;align-items:flex-start}
+.tickline input{margin-top:3px}
+span.f.missing,a.missing{background:#FFF3B0}
+figure.banner{margin:22px 0 30px}
+figure.banner figcaption{font-size:16px;margin-bottom:8px}
+.banner-pair{display:flex;gap:18px;align-items:flex-end;flex-wrap:wrap}
+.banner-pair img.full{max-width:100%;height:auto;border:1px solid var(--line);display:block}
+.phone{width:180px;font-size:12px;color:#4A4F63}
+.phone img{width:180px;border:1px solid var(--line);display:block;margin-bottom:3px}
+button{font:bold 13px Tahoma,Verdana,sans-serif;color:var(--navy);background:#fff;border:1.5px solid var(--navy);border-radius:3px;padding:5px 12px;cursor:pointer}
+button:hover{background:var(--navy);color:#fff}
+button.done{background:#1E6B3A;border-color:#1E6B3A;color:#fff}
+button.warn{background:#8A4B00;border-color:#8A4B00;color:#fff}
+.copybox{border:1px solid var(--line);border-radius:3px;padding:10px 12px;margin:8px 0;display:flex;gap:12px;align-items:flex-start}
+.copybox.narrow{max-width:260px}
+.copytext{flex:1;min-width:0}
+.copytext p{margin:0 0 9px}
+.copytext ul{margin:0 0 9px;padding-left:22px}
+.copybox button{flex:none}
+.option{margin:12px 0 18px}
+.optline{font-size:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:4px}
+.lead{font-weight:bold;color:var(--navy)}
+label.block{display:block;margin:6px 0}
+ol.regq{padding-left:22px}
+ol.regq>li{margin-bottom:14px}
+ol.choices{margin:2px 0 0;padding-left:22px}
+ol.choices li{margin:3px 0}
+ol.choices button{padding:1px 8px;font-size:12px;margin-left:6px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th{background:var(--navy);color:#fff;text-align:left;padding:7px 8px;font-weight:bold;vertical-align:bottom}
+td{border-bottom:1px solid var(--line);padding:6px 8px;vertical-align:top}
+td.src{font-size:12.5px;color:#4A4F63;width:20%}
+tr.total td{font-weight:bold;border-top:2px solid var(--navy)}
+table.counts td:not(:first-child),table.counts th:not(:first-child){text-align:center}
+.flag{color:var(--flag);font-size:13px}
+ul.checks{list-style:none;padding-left:0;margin:4px 0 8px}
+ul.checks li{margin:7px 0;padding-left:26px;position:relative}
+ul.checks input{position:absolute;left:0;top:3px;width:16px;height:16px}
+ul.checks .why{display:block;font-size:13px;color:#4A4F63}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.toolbar input,.toolbar select{font:14px Tahoma,Verdana,sans-serif;padding:6px 8px;border:1px solid #9AA3C7;border-radius:3px}
+.scroll{max-height:520px;overflow:auto;border:1px solid var(--line)}
+.scroll table th{position:sticky;top:0}
+td.em{word-break:break-all}
+.hscroll{overflow-x:auto}
+.scrollhint{display:none;font-size:12px;color:#4A4F63;margin:4px 0}
+.logo-row{display:flex;gap:18px;align-items:flex-start}
+.logo-row img{border:1px solid var(--line);flex:none}
+details.wide{margin:6px 0 18px}
+details.wide summary{cursor:pointer;color:var(--link)}
+.offscreen{position:absolute;left:-10000px;top:0;width:900px}
+#bar{position:fixed;left:0;right:0;bottom:0;background:var(--navy);color:#fff;padding:10px 16px;display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;font-size:14px}
+#bar code{background:#fff;color:var(--navy);padding:4px 10px;border-radius:3px;font:bold 15px Consolas,monospace}
+#bar button{background:#fff}
+#bar button.done{background:#1E6B3A;color:#fff;border-color:#fff}
+@media (max-width:720px){main{padding:20px 16px 140px}.fill{grid-template-columns:1fr}.toc{columns:1}.copybox{flex-direction:column}.scrollhint{display:block}.logo-row{flex-direction:column}}
+@media print{#bar,button{display:none}}
+
+/* Part 2: additions in the same look */
+p,li{max-width:860px}
+input[type=checkbox],input[type=radio]{accent-color:var(--navy)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.field input,.field textarea,.toolbar input,.toolbar select{border-color:#7A84AE}
+td.em{word-break:normal;overflow-wrap:anywhere}
+.brand{display:flex;justify-content:space-between;align-items:flex-start;gap:18px}
+.brand .logo{height:24px;width:auto;flex:none;margin-top:8px}
+figure.fig{margin:22px 0 30px}
+figure.fig figcaption{font-weight:bold;color:var(--navy);margin-bottom:8px}
+figure.fig img,figure.fig svg{max-width:100%;height:auto;border:1px solid var(--line);display:block}
+.tbc{font-style:italic;color:var(--navy)}
+ins{text-decoration:none;background:#FFF1A8}
+del{color:#C00000}
+th[scope=row]{background:none;color:var(--navy);border-bottom:1px solid var(--line);vertical-align:top}
+dl.terms{display:grid;grid-template-columns:150px 1fr;gap:6px 18px;margin:8px 0 14px}
+dl.terms dt{font-weight:bold;color:var(--navy)}
+dl.terms dd{margin:0}
+footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:#4A4F63}
+.sr{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (max-width:720px){dl.terms{grid-template-columns:1fr}.brand{flex-direction:column-reverse;gap:6px}}
+@media print{main{padding-bottom:0}th{background:none;color:var(--navy);border-bottom:2px solid var(--navy)}.scroll{max-height:none;overflow:visible}h2,h3{break-after:avoid}.copybox,figure,tr{break-inside:avoid}}
+</style>
+</head>
+<body>
+<main>
+
+<!-- HEADER: the 10 px navy bar is the only strong mark on the page. Then the title, a lede that says what the
+     page is for and how to answer, a status line, where to start, and a contents list whose numbers match
+     the numbered sections. -->
+<header>
+  <div class="brand">
+    <h1>[Page title]</h1>
+    <!-- OPTIONAL LOGO, only when asked: the official file, unaltered, once per page, small, on white.
+         Inline it as a data URI so the page stays one file (see references/html-explainers.md). -->
+    <!-- <img class="logo" alt="MongoDB" src="data:image/svg+xml;base64,PASTE"> -->
+  </div>
+  <p class="lede">[One or two sentences: what this page is for, the key dates in <b>bold</b>, and how to answer, for example: pick in sections 2 and 5; the line at the bottom collects your picks.]</p>
+  <p class="meta">Prepared [2 March 2026]. [Status: what has, and has not, been sent or shared.]</p>
+  <p>Start with <a href="#first">[the points to settle first]</a>, then:</p>
+  <ol class="toc">
+    <li><a href="#s1">[Text to copy]</a></li>
+    <li><a href="#s2">[A choice]</a></li>
+    <li><a href="#s3">[Steps]</a></li>
+    <li><a href="#s4">[Numbers]</a></li>
+    <li><a href="#s5">[Message to send]</a></li>
+    <li><a href="#s6">[Changes]</a></li>
+    <li><a href="#s7">[A list to look through]</a></li>
+  </ol>
+</header>
+
+<!-- UNNUMBERED FIRST SECTION: what must be settled before anything else, with its own Copy button. -->
+<h2 id="first">[Settle before anything is sent]</h2>
+<p>[Why these points come first: what they decide.]</p>
+<ol id="settle">
+  <li>[A point to settle, as a full sentence.]</li>
+  <li>[A second point to settle.]</li>
+</ol>
+<p><button type="button" class="copy" data-target="settle">Copy list</button></p>
+
+<!-- PATTERN: COPY BOX. Text on the left, its button on the right; on phones the button drops under the text. -->
+<h2 id="s1">1. [Text to copy]</h2>
+<p>[Where this text goes and what it is for.]</p>
+<div class="copybox"><div class="copytext" id="desc"><p>[Paragraph 1: what it is and what it does.]</p><p>[Paragraph 2: the practical points.]</p></div><button type="button" class="copy" data-target="desc">Copy text</button></div>
+<p class="small"><b>[Short value]</b></p>
+<div class="copybox narrow"><div class="copytext" id="value">#243168</div><button type="button" class="copy" data-target="value">Copy</button></div>
+
+<!-- PATTERN: OPTIONS. The suggestion is pre-selected and marked "(suggested)" in plain text; each option has a
+     run-in "Why:" and "Watch out:". -->
+<h2 id="s2">2. [A choice]</h2>
+<p>[What every option already respects, and the one rule for choosing.]</p>
+<div class="option">
+  <p class="optline"><label><input type="radio" name="q1" value="1" checked> <b>1. <span id="opt1">[Option wording]</span></b> (suggested)</label>
+  <button type="button" class="copy" data-target="opt1">Copy</button></p>
+  <p><span class="lead">Why:</span> [What it does well.]<br><span class="lead">Watch out:</span> [Its weak point.]</p>
+</div>
+<div class="option">
+  <p class="optline"><label><input type="radio" name="q1" value="2"> <b>2. <span id="opt2">[Option wording]</span></b></label>
+  <button type="button" class="copy" data-target="opt2">Copy</button></p>
+  <p><span class="lead">Why:</span> [What it does well.]<br><span class="lead">Watch out:</span> [Its weak point.]</p>
+</div>
+
+<!-- PATTERN: LETTERED STEPS. Letters, so they never clash with the numbered sections. Each step is worded the
+     way the screen words it, with a smaller "why" line. The browser remembers the ticks. -->
+<h2 id="s3">3. [Steps]</h2>
+<p class="small">The steps follow the screens in order. Tick as you go; this browser remembers the ticks.</p>
+<h3>A. [First group of steps (Menu, then Submenu)]</h3>
+<ul class="checks">
+  <li><label><input type="checkbox" class="tick" id="t_a1"> [Action, as the screen words it.]</label><span class="why">[Why it matters, or what goes wrong if it is skipped.]</span></li>
+  <li><label><input type="checkbox" class="tick" id="t_a2"> [Action: your pick in section 2 ([A choice]).]</label></li>
+</ul>
+<h3>B. [Second group of steps]</h3>
+<ul class="checks">
+  <li><label><input type="checkbox" class="tick" id="t_b1"> [Setting: on.]</label><span class="why">[The default, and why to change it.]</span></li>
+</ul>
+<details class="wide"><summary>[Where these steps come from]</summary><ul class="small"><li><a href="https://example.org/" target="_blank" rel="noopener">[Source page title, written out in full]</a></li></ul></details>
+
+<!-- PATTERN: FIGURE AND TABLE. Caption above, "Figure 1." in bold navy; navy header row with white text; hairline
+     rows, no stripes; numbers centred; a bold total under a 2 px navy rule; gaps named, never blank. -->
+<h2 id="s4">4. [Numbers]</h2>
+<p>[One sentence that introduces Figure 1 and says what to look for.]</p>
+<figure class="fig">
+  <figcaption>Figure 1. [What the figure shows]</figcaption>
+  <svg viewBox="0 0 640 150" width="640" height="150" role="img" aria-labelledby="f1t"><title id="f1t">[Alt text: what the figure shows]</title>
+    <rect width="640" height="150" fill="#fff"/>
+    <text x="20" y="38" font-family="Tahoma,Verdana,sans-serif" font-size="13" fill="#1D1D1B">[Group A]</text><rect x="120" y="24" width="420" height="20" fill="#243168"/><text x="548" y="39" font-family="Tahoma,Verdana,sans-serif" font-size="13" fill="#1D1D1B">42</text>
+    <text x="20" y="78" font-family="Tahoma,Verdana,sans-serif" font-size="13" fill="#1D1D1B">[Group B]</text><rect x="120" y="64" width="270" height="20" fill="#5B6AA6"/><text x="398" y="79" font-family="Tahoma,Verdana,sans-serif" font-size="13" fill="#1D1D1B">27</text>
+    <text x="20" y="118" font-family="Tahoma,Verdana,sans-serif" font-size="13" fill="#1D1D1B">[Group C]</text><rect x="120" y="104" width="130" height="20" fill="#8F99C2"/><text x="258" y="119" font-family="Tahoma,Verdana,sans-serif" font-size="13" fill="#1D1D1B">13</text>
+  </svg>
+</figure>
+<p class="scrollhint">Scroll sideways for more columns.</p>
+<div class="hscroll"><table class="counts"><thead><tr><th>Group</th><th>[Count]</th><th>[Second count]</th><th>[Still missing]</th></tr></thead><tbody>
+  <tr><td>[Group A]</td><td>42</td><td>40</td><td>2</td></tr>
+  <tr><td>[Group B]</td><td>27</td><td><i>none yet</i></td><td>27</td></tr>
+  <tr class="total"><td>All groups</td><td>69</td><td>40</td><td>29</td></tr>
+</tbody></table></div>
+<p class="small">Source: [the source, written out in full, with its date]. <span class="tbc">[Anything unconfirmed: to be confirmed.]</span></p>
+
+<!-- PATTERN: FILL IN ONCE, then a message that uses the boxes. Placed right before what it fills. Missing values
+     are shaded yellow; an empty link copies as "[link to follow]", never as a file path. -->
+<h2 id="s5">5. [Message to send]</h2>
+<h3>Fill in once</h3>
+<p>These boxes fill in the message below; anything still missing is shaded yellow. This browser remembers what you type.</p>
+<div class="fill">
+  <label class="field"><span>[Link label]</span><input id="in_link1" data-f="link1" placeholder="[Paste the link once it exists]"></label>
+  <label class="field"><span>[Date]</span><input id="in_when" data-f="when" placeholder="[2 Mar 2026]"><span class="hint">[Where the date comes from]</span></label>
+  <label class="field wide"><span>Signature</span><textarea id="in_sender" data-f="sender" rows="3">[Name]
+[Role]</textarea></label>
+</div>
+<p class="small">"Copy for email" keeps the bold text, the list and the links. Paste it into a new message and send it yourself.</p>
+<div class="copybox"><div class="copytext" id="emailbody"><p>Hello,</p>
+<p>[Opening sentence naming the <b>thing</b> and what it does.] It starts on <span class="f" data-f="when"></span>.</p>
+<p>[What to do:] <a href="#" data-href="link1">[the link text]</a>.</p>
+<p>Kind regards,<br><span class="f" data-f="sender"></span></p></div><button type="button" class="copy" data-target="emailbody" data-rich="1">Copy for email</button></div>
+<p><button type="button" id="copyplain">Copy as plain text</button></p>
+
+<!-- PATTERN: BEFORE AND AFTER. Added words highlighted, removed words struck through in red, row headers in navy. -->
+<h2 id="s6">6. [Changes]</h2>
+<div class="hscroll"><table><thead><tr><th style="width:18%">Item</th><th>Before</th><th>After</th></tr></thead><tbody>
+  <tr><th scope="row">[1.1]</th><td>[The old wording, with a <del>removed</del> word.]</td><td>[The new wording, with an <ins>added</ins> word.]</td></tr>
+</tbody></table></div>
+<dl class="terms"><dt>[Term]</dt><dd>[What it means, in one plain sentence.]</dd><dt>[Second term]</dt><dd>[What it means.]</dd></dl>
+
+<!-- PATTERN: A LIST TO LOOK THROUGH. A download embedded as base64 (works offline), then a search box (ignores accents),
+     a group filter and a live count above a scrolling table with a sticky header. Gaps are named, never blank. -->
+<h2 id="s7">7. [A list to look through]</h2>
+<p>[What the list holds, where it comes from and when it was checked.]</p>
+<p><button type="button" class="dl" data-b64="TmFtZSxHcm91cCxFbWFpbApFeGFtcGxlIFBlcnNvbixHcm91cCBBLHBlcnNvbkBleGFtcGxlLm9yZwo=" data-name="[List].csv" data-type="text/csv">Download the list</button> <span class="meta">[CSV, 1 KB]</span></p>
+<div class="toolbar"><input id="q" type="search" placeholder="Search name, group or email" aria-label="Search the list" style="flex:1;min-width:220px"><select id="g" aria-label="Group"><option value="">All groups</option><option>[Group A]</option><option>[Group B]</option></select><span class="meta" id="shown"></span></div>
+<p class="scrollhint">Scroll sideways for more columns.</p>
+<div class="scroll"><table id="list"><thead><tr><th>[Name]</th><th>[Group]</th><th>[Email]</th></tr></thead><tbody>
+  <tr data-g="[Group A]"><td>[Zoë Example]</td><td>[Group A]</td><td class="em">person@example.org</td></tr>
+  <tr data-g="[Group B]"><td>[Second Example]</td><td>[Group B]</td><td class="em"><i>none published</i></td></tr>
+</tbody></table></div>
+
+<footer>How it was checked: [the checks that were run, stated as the final state, never as a story of fixes].</footer>
+</main>
+
+<!-- ANSWER BAR (only when the page asks for decisions): composes "1=1 2=a" from the radio groups, starting at
+     the suggestions; the key says what each number means. Delete it on pages with no choices. -->
+<div id="bar"><span>Your picks:</span><code id="answer-line"></code><button type="button" id="answer-copy">Copy</button><span class="small">1 = [first decision]</span></div>
+<div id="status" class="sr" aria-live="polite"></div>
+
+<script>
+(function(){
+  // Page settings: make the prefix unique for each page, and list the radio groups the answer bar collects.
+  var CONFIG = {
+    prefix: 'page-template:',             // localStorage key prefix
+    emailId: 'emailbody',                 // the box that copies as an email (rich HTML + plain text)
+    linkFields: ['link1'],                // boxes that must be filled before the email is complete
+    missingTitle: 'Paste this link in the Fill in once boxes',
+    multiline: ['sender'],                // fields whose line breaks are kept
+    quiet: [],                            // fields that may stay empty without the yellow shade
+    picks: ['q1'],                        // radio groups in the answer line, in order: name them q1, q2, q3 ...
+    derive: function(v){}                 // work out derived fields here (for example an end time)
+  };
+  var store = {get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},
+               set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+  var P = CONFIG.prefix, statusEl = document.getElementById('status');
+  function values(){var v={};document.querySelectorAll('[data-f]').forEach(function(el){if(el.id&&el.id.indexOf('in_')===0){v[el.dataset.f]=el.type==='checkbox'?el.checked:el.value.trim();}});
+    CONFIG.derive(v);return v;}
+  function linksMissing(){var v=values();return CONFIG.linkFields.some(function(k){return !v[k];});}
+  function render(){var v=values();
+    document.querySelectorAll('span.f').forEach(function(s){var k=s.dataset.f;var val=v[k]||'';
+      if(CONFIG.multiline.indexOf(k)>-1){s.innerHTML='';val.split('\n').forEach(function(line,i){if(i)s.appendChild(document.createElement('br'));s.appendChild(document.createTextNode(line));});s.classList.toggle('missing',!val);}
+      else if(CONFIG.quiet.indexOf(k)>-1){s.textContent=val;}
+      else{s.textContent=val||('['+k+']');s.classList.toggle('missing',!val);}});
+    document.querySelectorAll('a[data-href]').forEach(function(a){var val=v[a.dataset.href];a.setAttribute('href',val||'#');a.classList.toggle('missing',!val);a.title=val?'':CONFIG.missingTitle;});
+  }
+  document.querySelectorAll('input[data-f],textarea[data-f]').forEach(function(el){var saved=store.get(P+el.id);
+    if(el.type==='checkbox'){if(saved!==null)el.checked=saved==='1';el.addEventListener('change',function(){store.set(P+el.id,el.checked?'1':'0');render();});return;}
+    if(saved!==null)el.value=saved;
+    el.addEventListener('input',function(){store.set(P+el.id,el.value);render();});});
+  render();
+
+  function flash(btn,label,warn){var old=btn.dataset.label||btn.textContent;btn.dataset.label=old;btn.textContent=label||'Copied';btn.classList.add(warn?'warn':'done');
+    if(statusEl)statusEl.textContent=btn.textContent;
+    setTimeout(function(){btn.textContent=old;btn.classList.remove('done');btn.classList.remove('warn');},warn?2500:1400);}
+  function plainOf(el){return el.innerText.replace(/\n{3,}/g,'\n\n').trim();}
+  // plain email: each live link becomes "link text: URL" in place, in an off-screen copy, so no URL lands in the wrong sentence
+  function emailPlain(el){var v=values(),tmp=document.createElement('div');tmp.className='offscreen';tmp.innerHTML=el.innerHTML;
+    tmp.querySelectorAll('a[data-href]').forEach(function(a){a.replaceWith(document.createTextNode(a.textContent+': '+(v[a.dataset.href]||'[link to follow]')));});
+    document.body.appendChild(tmp);var txt=plainOf(tmp);tmp.remove();return txt;}
+  function cleanHtml(el){var c=el.cloneNode(true);c.querySelectorAll('span.f').forEach(function(s){s.replaceWith(document.createRange().createContextualFragment(s.innerHTML));});
+    c.querySelectorAll('a').forEach(function(a){if(a.getAttribute('href')==='#'){a.replaceWith(document.createTextNode(a.textContent+' [link to follow]'));return;}
+      a.removeAttribute('data-href');a.removeAttribute('title');a.removeAttribute('class');});return c.innerHTML;}
+  // Fallbacks copy a cleaned copy, never the live element, so no page attribute or local file path can leak.
+  function fallbackRich(el){var tmp=document.createElement('div');tmp.className='offscreen';tmp.innerHTML=cleanHtml(el);document.body.appendChild(tmp);
+    var sel=window.getSelection(),range=document.createRange();range.selectNodeContents(tmp);sel.removeAllRanges();sel.addRange(range);
+    try{document.execCommand('copy');}catch(e){}sel.removeAllRanges();tmp.remove();}
+  function fallbackPlain(text){var ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');}catch(e){}ta.remove();}
+  function copyText(text,btn,after){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(after,function(){fallbackPlain(text);after();});}else{fallbackPlain(text);after();}}
+  function done(btn,el){if(el.id===CONFIG.emailId&&linksMissing()){flash(btn,'Copied, links still missing',true);}else{flash(btn);}}
+  function copyEl(el,rich,btn){
+    var plain=el.id===CONFIG.emailId?emailPlain(el):plainOf(el);
+    if(rich&&window.ClipboardItem&&navigator.clipboard&&navigator.clipboard.write){
+      var h=new Blob([cleanHtml(el)],{type:'text/html'}),t=new Blob([plain],{type:'text/plain'});
+      navigator.clipboard.write([new ClipboardItem({'text/html':h,'text/plain':t})]).then(function(){done(btn,el);},function(){fallbackRich(el);done(btn,el);});
+    }else if(rich){fallbackRich(el);done(btn,el);}
+    else{copyText(plain,btn,function(){done(btn,el);});}
+  }
+  document.querySelectorAll('button.copy').forEach(function(b){b.addEventListener('click',function(){var el=document.getElementById(b.dataset.target);if(el)copyEl(el,b.dataset.rich==='1',b);});});
+  var copyplain=document.getElementById('copyplain'), emailEl=document.getElementById(CONFIG.emailId);
+  if(copyplain&&emailEl){copyplain.addEventListener('click',function(){var b=this;
+    copyText(emailPlain(emailEl),b,function(){if(linksMissing())flash(b,'Copied, links still missing',true);else flash(b);});});}
+
+  // downloads: base64 to Blob to a temporary link (works from a local file, offline)
+  document.querySelectorAll('button.dl').forEach(function(b){b.addEventListener('click',function(){
+    var bin=atob(b.dataset.b64),n=bin.length,u8=new Uint8Array(n);for(var i=0;i<n;i++)u8[i]=bin.charCodeAt(i);
+    var url=URL.createObjectURL(new Blob([u8],{type:b.dataset.type}));var a=document.createElement('a');a.href=url;a.download=b.dataset.name;
+    document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(url);a.remove();},2000);flash(b,'Downloaded');});});
+
+  // ticks and picks remembered in this browser
+  document.querySelectorAll('input.tick').forEach(function(c){c.checked=store.get(P+c.id)==='1';c.addEventListener('change',function(){store.set(P+c.id,c.checked?'1':'0');});});
+  CONFIG.picks.forEach(function(n){var saved=store.get(P+n);if(saved){var r=document.querySelector('input[name="'+n+'"][value="'+saved+'"]');if(r)r.checked=true;}});
+
+  // table filter: <input id="q">, <select id="g">, <span id="shown">, rows in #list tbody with data-g; ignores accents
+  var MARKS=new RegExp('['+String.fromCharCode(0x300)+'-'+String.fromCharCode(0x36f)+']','g');
+  function fold(s){return s.normalize('NFD').replace(MARKS,'').toLowerCase();}
+  var q=document.getElementById('q'),g=document.getElementById('g'),shown=document.getElementById('shown');
+  function filter(){var term=fold(q.value),grp=g.value,n=0;
+    document.querySelectorAll('#list tbody tr').forEach(function(tr){var ok=(!grp||tr.dataset.g===grp)&&(!term||fold(tr.textContent).indexOf(term)>-1);tr.style.display=ok?'':'none';if(ok)n++;});
+    shown.textContent=n+' shown';}
+  if(q&&g&&shown){q.addEventListener('input',filter);g.addEventListener('change',filter);filter();}
+
+  // answer line in the bottom bar
+  var answer=document.getElementById('answer-line');
+  function line(){var parts=[];CONFIG.picks.forEach(function(n){var c=document.querySelector('input[name="'+n+'"]:checked');parts.push(n.slice(1)+'='+(c?c.value:'?'));});
+    answer.textContent=parts.join(' ');}
+  if(answer){
+    document.querySelectorAll('input[type=radio]').forEach(function(r){r.addEventListener('change',function(){store.set(P+r.name,r.value);line();});});line();
+    var ac=document.getElementById('answer-copy');
+    if(ac)ac.addEventListener('click',function(){var b=this;copyText(answer.textContent,b,function(){flash(b);});});
+  }
+
+  // print: open every disclosure so nothing is left out of the paper copy
+  window.addEventListener('beforeprint',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+})();
+</script>
+</body>
+</html>

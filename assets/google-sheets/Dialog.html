@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base target="_top">
+<!-- A screen in the navy house style, shown by showAddDialog() in NavyStyle.gs. Google's dialog frame shows the
+     title; this page adds the thin navy bar, a one-line subtitle, sections, flat fields, a message line and the
+     buttons: main action bottom right, Cancel bottom left, Esc closes. Every field and button has a hover note. -->
+<style>
+  :root{--navy:#243168;--ink:#1B1F2A;--soft:#2C3A78;--rule:#C9CEDF;--tint:#F4F5FA;--red:#A4262C;--green:#1E7B3C}
+  *{box-sizing:border-box}
+  body{margin:0;font:13px/1.45 Tahoma,Verdana,sans-serif;color:var(--ink);background:#fff}
+  .bar{height:8px;background:var(--navy)}
+  .sub{color:var(--soft);font-size:12px;margin:10px 20px 0}
+  form{padding:0 20px 16px}
+  h2{font-size:13px;color:var(--navy);margin:16px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--rule)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
+  label{display:flex;flex-direction:column;font-size:12px}
+  input,select,textarea{font:13px Tahoma,Verdana,sans-serif;color:var(--ink);border:1px solid #7A84AE;border-radius:3px;padding:4px 6px;margin-top:3px;background:#fff}
+  input[readonly]{background:var(--tint)}
+  .wide{grid-column:1/-1}
+  .msg{min-height:18px;font-weight:bold;font-size:12px;margin:12px 0 8px}
+  .msg.bad{color:var(--red)}
+  .msg.good{color:var(--green)}
+  .buttons{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  button{font:bold 12px Tahoma,Verdana,sans-serif;border-radius:3px;padding:6px 14px;cursor:pointer;border:1.5px solid var(--navy);background:#fff;color:var(--navy)}
+  button.primary{background:var(--navy);color:#fff}
+  button.danger{color:var(--red);border-color:var(--red)}
+  button:disabled{opacity:.6;cursor:default}
+  button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--navy);outline-offset:1px}
+</style>
+</head>
+<body>
+<div class="bar"></div>
+<p class="sub">[One sentence: what this screen does.] Fields marked * are needed.</p>
+<form id="f" novalidate>
+  <h2>[Who]</h2>
+  <div class="grid">
+    <label>Name *<input name="name" required title="[The person's full name, as they write it.]"></label>
+    <label>Email *<input name="email" type="email" required title="[Their work email address.]"></label>
+    <label class="wide">Team<select name="team" title="[Pick the team. New teams are added on the Lists tab first.]"><option value=""></option></select></label>
+  </div>
+  <h2>[The request]</h2>
+  <div class="grid">
+    <label>Requested on<input name="requested" placeholder="16 Mar 2026" title="[Typed like 16 Mar 2026. Leave empty for today.]"></label>
+    <label>Status<input name="status" value="Waiting" readonly title="[New lines always start as Waiting.]"></label>
+    <label class="wide">Notes<textarea name="notes" rows="3" title="[Anything people should know. It is saved with today's date.]"></textarea></label>
+  </div>
+  <div class="msg" id="msg" role="status" aria-live="polite"></div>
+  <div class="buttons">
+    <button type="button" id="cancel" title="Close without saving (Esc).">Cancel</button>
+    <button type="submit" class="primary" id="save" title="Add the line and close this screen.">Add</button>
+  </div>
+</form>
+<script>
+  var form = document.getElementById('f'), msg = document.getElementById('msg'), save = document.getElementById('save');
+  function closeScreen() { google.script.host.close(); }
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeScreen(); });
+  document.getElementById('cancel').addEventListener('click', closeScreen);
+  function show(text, good) { msg.className = 'msg ' + (good ? 'good' : 'bad'); msg.textContent = text; }
+
+  // drop-down values come from the Lists tab, so the screen and the sheet always offer the same choices
+  google.script.run
+    .withSuccessHandler(function (values) {
+      var select = form.elements.team;
+      values.forEach(function (v) { var o = document.createElement('option'); o.textContent = v; select.appendChild(o); });
+    })
+    .withFailureHandler(function (err) { show('Could not read the Lists tab: ' + err.message); })
+    .listValues('Team');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.elements.name.value.trim()) { show('Type the name.'); form.elements.name.focus(); return; }
+    if (form.elements.email.value.indexOf('@') < 0) { show('Type an email address with an @.'); form.elements.email.focus(); return; }
+    var data = {};
+    Array.prototype.forEach.call(form.elements, function (el) { if (el.name) data[el.name] = el.value.trim(); });
+    save.disabled = true;
+    google.script.run
+      .withSuccessHandler(function () { show('Added.', true); setTimeout(closeScreen, 700); })
+      .withFailureHandler(function (err) { show(err.message); save.disabled = false; })
+      .addRequest(data);
+  });
+</script>
+</body>
+</html>

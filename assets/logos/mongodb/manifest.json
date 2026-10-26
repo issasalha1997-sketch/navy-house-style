@@ -1,0 +1,104 @@
+[
+ {
+  "file": "mongodb-leaf-evergreen.png",
+  "original_name": "Evergreen - Logomark.png",
+  "sha256": "f9c21eccf6fb4cf1d24cc7c4567e9b9df0d9062447bb63a9da17c7a212c4a62c",
+  "bytes": 18504,
+  "pixels": [
+   530,
+   1136
+  ]
+ },
+ {
+  "file": "mongodb-leaf-evergreen.svg",
+  "original_name": "Evergreen - Logomark.svg",
+  "sha256": "4cffb92805e9ad93459b5ba1d7baa7753e23247a78b4091a1079b1f39562009c",
+  "bytes": 737,
+  "pixels": null
+ },
+ {
+  "file": "mongodb-leaf-off-white.png",
+  "original_name": "OffWhite - Leaf - Logomark.png",
+  "sha256": "73e58514fa99a34211081800397538623bc537b568212da2ace66b00c0526cda",
+  "bytes": 18375,
+  "pixels": [
+   530,
+   1136
+  ]
+ },
+ {
+  "file": "mongodb-leaf-off-white.svg",
+  "original_name": "OffWhite - Logomark.svg",
+  "sha256": "68ce327766b1a32a20200cb42fce068372c2005de2f08cc3adaea602a1e104c7",
+  "bytes": 737,
+  "pixels": null
+ },
+ {
+  "file": "mongodb-leaf-slate.png",
+  "original_name": "Slate - Logomark.png",
+  "sha256": "9f39c7938d6e85a15ecf855d38f4fcfa2da084c9e8d9271f6279957be611a35a",
+  "bytes": 18024,
+  "pixels": [
+   530,
+   1136
+  ]
+ },
+ {
+  "file": "mongodb-leaf-slate.svg",
+  "original_name": "Slate - Leaf - Logomark.svg",
+  "sha256": "40979806ddb0bd946c13edc1e6f51c15335617f41f3eb565b55bd503eab4c9d1",
+  "bytes": 737,
+  "pixels": null
+ },
+ {
+  "file": "mongodb-logo-evergreen.png",
+  "original_name": "Evergreen - MongoDB - Full Logo.png",
+  "sha256": "a4415e625311632d9bf7bb906713f6e4d57cca154d4708ef256e7568df6cc4be",
+  "bytes": 121157,
+  "pixels": [
+   4808,
+   1228
+  ]
+ },
+ {
+  "file": "mongodb-logo-evergreen.svg",
+  "original_name": "Evergreen - MongoDB - Full Logo.svg",
+  "sha256": "c6c5f446c6c35b476c14093f58c3c3dc5a4dfc8d11df934539ce68271dfad213",
+  "bytes": 12021,
+  "pixels": null
+ },
+ {
+  "file": "mongodb-logo-off-white.png",
+  "original_name": "OffWhite - MongoDB - Full Logo.png",
+  "sha256": "f6094f4495b418e2d807ee9bcc61d8946e9a1b0b1a860a184d7eabb10f1b9423",
+  "bytes": 120833,
+  "pixels": [
+   4808,
+   1228
+  ]
+ },
+ {
+  "file": "mongodb-logo-off-white.svg",
+  "original_name": "OffWhite - MongoDB - Full Logo.svg",
+  "sha256": "a9f9f74ddbe9352a5555f7a10da9faaa208d54ca7586846a4a1b0d05e2b08b44",
+  "bytes": 12021,
+  "pixels": null
+ },
+ {
+  "file": "mongodb-logo-slate.png",
+  "original_name": "Slate - MongoDB - Full Logo.png",
+  "sha256": "cd4ea87fd6b37af5180d09f404e766668beb99329528e57ff1caa7d2c8ac473f",
+  "bytes": 115343,
+  "pixels": [
+   4808,
+   1228
+  ]
+ },
+ {
+  "file": "mongodb-logo-slate.svg",
+  "original_name": "Slate - MongoDB - Full Logo.svg",
+  "sha256": "1c01d82be5d2a9be6ac07f91904fd5a07bd860f9753b94ecdf01c296c0e29dd4",
+  "bytes": 12021,
+  "pixels": null
+ }
+]
