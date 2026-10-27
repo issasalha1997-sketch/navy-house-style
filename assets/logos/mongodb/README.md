@@ -14,6 +14,7 @@ PNG files: full logo 4808 x 1228 px, leaf 530 x 1136 px, transparent backgrounds
 MongoDB's rules (brand page and Trademark Standards for Use):
 
 - Do not edit, change, distort, recolour or reconfigure the marks, including the leaf.
-- Use the colour version with the best contrast against its background; show the logo once, in a prominent place; never use the logo or the leaf as part of an illustration.
-- Material not made by MongoDB: use the marks only to identify MongoDB's products and services; nothing may suggest MongoDB's sponsorship, endorsement or affiliation; your own name and logo stay more prominent than MongoDB's.
+- Use the colour version with the best contrast against its background; show the logo once, in a prominent place ("The logo should only be seen once in a prominent location in every execution", brand page); never use the logo or the leaf as part of an illustration.
+- Material not made by MongoDB: use the marks only to identify MongoDB's products and services; nothing may suggest MongoDB's sponsorship, endorsement or affiliation; your own name and logo stay more prominent than MongoDB's ("your name and logo should always be more prominent than ours").
+- The name in text: "MongoDB trademarks may only be used with the correct form of notice of registration. If the mark is registered, the ® should be used. If not, the word "trademark" or the symbol "TM" should be used." MongoDB's page lists its pending and registered marks together, so check a mark's status before adding ®. Never combine the name with another word, hyphenate it or abbreviate it.
 - MongoDB, the MongoDB logo and the leaf are trademarks of MongoDB, Inc. Full rules: https://www.mongodb.com/legal/trademark-usage-guidelines. Questions: trademark@mongodb.com.

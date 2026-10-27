@@ -1,7 +1,16 @@
 {
   "name": "Navy house style palette",
   "rule": "Navy is the one brand colour. Every neutral is a tint of navy: no grey anywhere. Other colours appear only where they carry a meaning (status, attention, links).",
-  "navy": {"hex": "#243168", "rgb": [36, 49, 104], "excel_com_bgr": "0x683124", "white_on_navy_contrast": 12.25},
+  "navy": {
+    "hex": "#243168",
+    "rgb": [
+      36,
+      49,
+      104
+    ],
+    "excel_com_bgr": "0x683124",
+    "white_on_navy_contrast": 12.25
+  },
   "documents": {
     "text": "#000000",
     "background": "#FFFFFF",
@@ -11,35 +20,95 @@
     "table_header_text": "#FFFFFF"
   },
   "spreadsheets": {
-    "navy": {"hex": "#243168", "use": "titles, section titles, header-row fill, rules, totals, tile numbers, buttons, tab colour of working sheets"},
-    "ink": {"hex": "#1B1F2A", "use": "all data and body text (never pure black)"},
-    "soft": {"hex": "#2C3A78", "use": "subtitles, hints, notes, tile captions, secondary button captions"},
-    "line": {"hex": "#D3D8EA", "use": "row hairlines (only under rows that hold data), light rules"},
-    "rule": {"hex": "#C9CEDF", "use": "tile borders, form-field borders, section rules on forms, second line of text on navy buttons"},
-    "picker_fill": {"hex": "#EEF0F7", "use": "the one input cell on a dashboard (with a medium navy box)"},
-    "tint": {"hex": "#F4F5FA", "use": "read-only boxes and tiles on forms or dialogs"},
-    "bar": {"hex": "#5B6AA6", "use": "data bars and bar charts"},
-    "reference_tab": {"hex": "#8F99C2", "use": "tab colour of reference sheets (lists, lookups)"},
-    "faded": {"hex": "#7A82AE", "use": "whole-row font of ended or closed records"}
+    "navy": {
+      "hex": "#243168",
+      "use": "titles, section titles, header-row fill, rules, totals, tile numbers, buttons, tab colour of working sheets"
+    },
+    "ink": {
+      "hex": "#1B1F2A",
+      "use": "all data and body text (never pure black)"
+    },
+    "soft": {
+      "hex": "#2C3A78",
+      "use": "subtitles, hints, notes, tile captions, secondary button captions"
+    },
+    "line": {
+      "hex": "#D3D8EA",
+      "use": "row hairlines (only under rows that hold data), light rules"
+    },
+    "rule": {
+      "hex": "#C9CEDF",
+      "use": "tile borders, form-field borders, section rules on forms, second line of text on navy buttons"
+    },
+    "picker_fill": {
+      "hex": "#EEF0F7",
+      "use": "the one input cell on a dashboard (with a medium navy box)"
+    },
+    "tint": {
+      "hex": "#F4F5FA",
+      "use": "read-only boxes and tiles on forms or dialogs"
+    },
+    "bar": {
+      "hex": "#5B6AA6",
+      "use": "data bars and bar charts"
+    },
+    "reference_tab": {
+      "hex": "#8F99C2",
+      "use": "tab colour of reference sheets (lists, lookups)"
+    },
+    "faded": {
+      "hex": "#7A82AE",
+      "use": "whole-row font of ended or closed records"
+    }
   },
   "status_text": {
-    "done": {"hex": "#1E7B3C", "note": "bold for the main 'live/done' state"},
-    "waiting": {"hex": "#8A5300", "note": "waiting on us; bold when on hold; italic for old, unchecked records"},
-    "with_others": {"hex": "#00618A", "note": "waiting on an outside party"},
-    "stopped": {"hex": "#A4262C", "note": "refused, ended or an error; bold while still being ended"}
+    "done": {
+      "hex": "#1E7B3C",
+      "note": "bold for the main 'live/done' state"
+    },
+    "waiting": {
+      "hex": "#8A5300",
+      "note": "waiting on us; bold when on hold; italic for old, unchecked records"
+    },
+    "with_others": {
+      "hex": "#00618A",
+      "note": "waiting on an outside party"
+    },
+    "stopped": {
+      "hex": "#A4262C",
+      "note": "refused, ended or an error; bold while still being ended"
+    }
   },
   "progress_checklist": {
-    "finished_text": "#375623", "finished_fill": "#E2EFDA",
-    "in_progress_text": "#B5520F", "in_progress_fill": "#FCE4D6",
+    "finished_text": "#375623",
+    "finished_fill": "#E2EFDA",
+    "in_progress_text": "#B5520F",
+    "in_progress_fill": "#FCE4D6",
     "error_text": "#C00000",
     "not_needed": "strikethrough task text and navy italic in the date cell"
   },
   "attention": {
-    "needs_a_look_fill": {"hex": "#FFE699", "use": "fill on the exact cell that needs fixing (conditional), clears itself when fixed"},
-    "fill_in_once": {"hex": "#FFF4CC", "use": "cells filled once at the top of a template, inside a thin rule-colour box"},
-    "banner_fill": {"hex": "#FFF4CE", "edge": "#C27C0E", "use": "a one-line notice at the very top of a sheet (for example 'open in the desktop app to use the buttons')"},
-    "count_above_zero": {"hex": "#A4262C", "use": "bold red on a problem count only when it is above 0"},
-    "to_be_confirmed": {"hex": "#243168", "use": "navy italic for anything not yet confirmed"}
+    "needs_a_look_fill": {
+      "hex": "#FFE699",
+      "use": "fill on the exact cell that needs fixing (conditional), clears itself when fixed"
+    },
+    "fill_in_once": {
+      "hex": "#FFF4CC",
+      "use": "cells filled once at the top of a template, inside a thin rule-colour box"
+    },
+    "banner_fill": {
+      "hex": "#FFF4CE",
+      "edge": "#C27C0E",
+      "use": "a one-line notice at the very top of a sheet (for example 'open in the desktop app to use the buttons')"
+    },
+    "count_above_zero": {
+      "hex": "#A4262C",
+      "use": "bold red on a problem count only when it is above 0"
+    },
+    "to_be_confirmed": {
+      "hex": "#243168",
+      "use": "navy italic for anything not yet confirmed"
+    }
   },
   "html": {
     "navy": "#243168",
@@ -55,17 +124,65 @@
     "removed_words": "#C00000"
   },
   "figures": {
-    "navy_ramp": ["#243168", "#5B6AA6", "#8F99C2", "#C9CEDF"],
+    "navy_ramp": [
+      "#243168",
+      "#5B6AA6",
+      "#8F99C2",
+      "#C9CEDF"
+    ],
     "note": "Navy leads. Further series take the ramp in order. Status colours only where they mean their status. Label pale marks; never use the two lightest steps for text."
   },
   "contrast_on_white": {
-    "#243168": 12.25, "#1B1F2A": 16.46, "#1D1D1B": 16.88, "#2C3A78": 10.59, "#4A4F63": 8.11,
-    "#1E7B3C": 5.31, "#8A5300": 6.33, "#00618A": 6.83, "#A4262C": 7.26, "#375623": 8.34,
-    "#B5520F": 5.03, "#C00000": 6.48, "#0563C1": 5.90, "#8A4B00": 6.80, "#5B6AA6": 5.18
+    "#243168": 12.25,
+    "#1B1F2A": 16.46,
+    "#1D1D1B": 16.88,
+    "#2C3A78": 10.59,
+    "#4A4F63": 8.11,
+    "#1E7B3C": 5.31,
+    "#8A5300": 6.33,
+    "#00618A": 6.83,
+    "#A4262C": 7.26,
+    "#375623": 8.34,
+    "#B5520F": 5.03,
+    "#C00000": 6.48,
+    "#0563C1": 5.9,
+    "#8A4B00": 6.8,
+    "#5B6AA6": 5.18
   },
   "logos": {
     "default": "none: add a logo only when asked",
     "mongodb_on_white": "assets/logos/mongodb/mongodb-logo-slate.svg",
     "mongodb_on_navy": "assets/logos/mongodb/mongodb-logo-off-white.svg"
+  },
+  "slides": {
+    "default": "green",
+    "note": "Slides only. Documents, sheets and pages stay navy. Small text in a series colour that fails contrast uses the primary instead (readable() in assets/slides/slide_kit.py).",
+    "green": {
+      "primary": "#00684A",
+      "surface": "#E3FCF7",
+      "hairline": "#A6CAC0",
+      "decor_and_now": "#2E836B",
+      "ramp": [
+        "#00684A",
+        "#4C9580",
+        "#8CBBAE",
+        "#C7DED7"
+      ],
+      "white_on_primary_contrast": 6.82,
+      "source": "primary = MongoDB Forest Green, surface = MongoDB Mist (brand assets); the other steps are tints of the primary"
+    },
+    "navy": {
+      "primary": "#243168",
+      "surface": "#EEF0F7",
+      "hairline": "#BCC3DE",
+      "decor_and_now": "#3A4A86",
+      "ramp": [
+        "#243168",
+        "#5B6AA6",
+        "#8F99C2",
+        "#C9CEDF"
+      ],
+      "white_on_primary_contrast": 12.25
+    }
   }
 }

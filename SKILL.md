@@ -1,11 +1,11 @@
 ---
 name: navy-house-style
-description: House style for documents, spreadsheets, figures and HTML pages - navy 243168 as the one colour, Tahoma, calm spacing, plain British English, no grey. Use it by default whenever you create or restyle a Word or Google Docs document, an Excel workbook or Google Sheet (dashboards, trackers, registers, checklists, buttons, Apps Script dialogs), a chart or figure, or a local HTML explainer, guide, walkthrough or pack, unless the user asks for another style or the work must match an existing template. Also use it when the user says "navy style" or "house style", or asks for the MongoDB logo on a deliverable (the official logo files are included).
+description: House style for documents, spreadsheets, slides, figures and HTML pages - Tahoma, calm spacing, plain British English, no grey; navy 243168 for documents, sheets and pages, a calm green (MongoDB Forest Green 00684A) for slides. Use it by default whenever you create or restyle a Word or Google Docs document, an Excel workbook or Google Sheet (dashboards, trackers, registers, checklists, buttons, Apps Script dialogs), PowerPoint slides or a deck (including a slide for someone else's deck), an event banner, a chart or figure, or a local HTML explainer, guide, walkthrough or pack, unless the user asks for another style or the work must match an existing template. Slides follow references/slides.md so they never look like generic AI slides. Also use it when the user says "house style" or "navy style", or asks for the MongoDB logo (official files included).
 ---
 
 # Navy house style
 
-One calm, readable look for everything: documents, spreadsheets (Excel and Google Sheets), figures and HTML explainer pages. Navy is the only brand colour. Near-black text, white space and a few colours that carry a meaning do the rest.
+One calm, readable look for everything: documents, spreadsheets (Excel and Google Sheets), slides, figures and HTML explainer pages. Navy is the brand colour for documents, sheets and pages; slides default to a calm green. Near-black text, white space and a few colours that carry a meaning do the rest.
 
 ## The five ideas
 
@@ -24,6 +24,7 @@ One calm, readable look for everything: documents, spreadsheets (Excel and Googl
 | A Google Sheet | `references/spreadsheets.md`, then `references/google-sheets.md` | `assets/google-sheets/` |
 | An HTML explainer, guide, walkthrough or pack | `references/html-explainers.md` | `assets/html/explainer-template.html` |
 | A chart, diagram or figure | `references/figures.md` | |
+| Slides, a deck, a slide for someone else's deck, an event banner | `references/slides.md`, then `references/slide-patterns.md`, `references/slide-build.md`, `references/banners.md` | `assets/slides/` (run `demo_deck.py` to see every pattern) |
 
 Read only the files the task needs.
 
@@ -44,7 +45,8 @@ Every role, tint and contrast ratio: `assets/palette.json`. A few values differ 
 - **No grey anywhere:** no grey text, fills, borders or chart series. Every neutral is a pale or deep tint of navy.
 - Colour only where it carries a meaning, and never as the only signal: add a word, a mark or a pattern.
 - A tint of navy is a design treatment, not a new brand colour. Do not invent brand colours.
-- The navy stays even when the work is about a brand with other colours (MongoDB's greens included). A logo can name that brand; the style does not change. The exception: official material that must follow MongoDB's own brand, or a template MongoDB supplies. There, MongoDB's brand and template win.
+- **Slides are the exception: they default to green** (MongoDB's Forest Green #00684A with its tints; navy is a one-word option). Everything about slide colour is in `references/slides.md`.
+- Documents, sheets and pages stay navy even when the work is about a brand with other colours (MongoDB's greens included). A logo can name that brand; the style does not change. The exception: official material that must follow MongoDB's own brand, or a template MongoDB supplies. There, MongoDB's brand and template win.
 
 ## Type
 
@@ -53,6 +55,7 @@ Tahoma everywhere; fallbacks Verdana, then sans-serif.
 - **Documents:** body 12 pt; Heading 1 14 pt bold, Heading 2 12 pt bold, Heading 3 12 pt regular, all navy; tables at least 10 pt; footnotes 10 pt.
 - **Spreadsheets:** body and data 10 pt; header row 10 pt bold white on navy; titles 14 to 20 pt bold navy; notes 8.5 to 9 pt italic.
 - **HTML pages:** body 15 px with line height 1.55; h1 28 px, h2 21 px, h3 16 px; small text 13 px.
+- **Slides:** title 28 to 32 pt bold on one line, lead 15 pt, body 13 pt, nothing under 12 pt (details in `references/slides.md`).
 - **Google Docs and Sheets:** see `references/google-sheets.md` for the font that replaces Tahoma there.
 - Headings: Heading 1 in documents in Title Case, everything else in sentence case. No ALL CAPS, no letter-spaced capitals.
 
